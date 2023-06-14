@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class ECommerce {
     public static void main(String[] args) {
         // Criando objetos de produtos
-        Product livro = new Product("Livro", 29.99, "Um livro interessante sobre um determinado assunto.");
-        Product notebook = new Product("Notebook", 1999.99, "Um notebook poderoso para uso profissional.");
-        Product televisao = new Product("Televisão", 799.99, "Uma televisão de alta definição com recursos avançados.");
+        Product livro = new Product("Livro", 29.99, "Um livro interessante sobre um determinado assunto.", 2);
+        Product notebook = new Product("Notebook", 1999.99, "Um notebook poderoso para uso profissional.", 5);
+        Product televisao = new Product("Televisão", 799.99, "Uma televisão de alta definição com recursos avançados.", 10);
 
         // Criando carrinho de compras
         ShoppingCart cart = new ShoppingCart();
@@ -65,30 +65,34 @@ public class ECommerce {
                 break;
         }
 
-        scanner.close();
-
 
         // Métodos de pagamentos e descontos dos fretes Correios X Transportadora
 
         // Solicitar o peso do produto em kg
-        System.out.print("Digite o peso do produto em kg: ");
-        double peso = scanner.nextDouble();
+        //System.out.print("Digite o peso do produto em kg: ");
+         double peso = cart.calcularPeso();
+
 
         // Solicitar a distância em km
         System.out.print("Digitar a distância em km:  ");
         double distancia = scanner.nextDouble();
 
+        CalculadoraFrete calculadora = new FreteTransportadora();
+
+
+
+
         // Calcular o valor do frete
-        double valorFrete = FreteCorreios.calcularFreteCorreios(peso, distancia);
+        double valorFrete = calculadora.calcular(peso, distancia);
 
         // Exibir o valor do frete
         System.out.println("O valor do frete dos Correios é: R$" + valorFrete);
 
         // Calcular frete Transportadora
-        double valorFreteTransportadora = FreteTransportadora.calcularFreteLanLanTransportes(peso, distancia);
+        //double valorFreteTransportadora = FreteTransportadora.calcularFreteLanLanTransportes(peso, distancia);
 
         // Exibir o valor do frete da transportadora
-        System.out.println("O valor do frete da TransportadoraLanLAn é:  R$" + valorFreteTransportadora);
+        //System.out.println("O valor do frete da TransportadoraLanLAn é:  R$" + valorFreteTransportadora);
 
         scanner.close();
 

@@ -2,11 +2,12 @@ import java.util.Scanner;
 
 public interface CalculadoraFrete {
 
-     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    //double calcularFreteCorreios(double peso, double distancia);
+
+    double calcular (double peso, double distancia);
 
     }
-}
+
 
 
 

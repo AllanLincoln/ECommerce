@@ -1,5 +1,5 @@
-public class FreteCorreios {
-    public static double calcularFreteCorreios(double peso, double distancia) {
+public class FreteCorreios implements CalculadoraFrete {
+    public double calcular(double peso, double distancia) {
         double valorInicial;
         double valorPorKm;
 

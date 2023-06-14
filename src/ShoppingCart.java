@@ -47,6 +47,16 @@ public class ShoppingCart {
 
         return total;
     }
+
+    public double calcularPeso() {
+        double total = 0.0;
+
+        for (Product product : products) {
+            total += product.getPeso();
+        }
+
+        return total;
+    }
 }
 
 
