@@ -1,19 +1,24 @@
 public class CartaoCredito implements PaymentMethod {
-    private int numParcelas;
+    private int installmentCount;
 
-    public CartaoCredito(int numParcelas) {
-        this.numParcelas = numParcelas;
+    public CartaoCredito(int installmentCount) {
+        this.installmentCount = installmentCount;
     }
 
+    public CartaoCredito() {
+
+    }
+
+    @Override
     public void efetuarPagamento(double valor) {
-        double valorParcela = valor / numParcelas;
-        System.out.println("Pagamento via cartão de crédito em " + numParcelas + "x de R$" + valorParcela + " realizado com sucesso.");
+
     }
 
-    public void validar (double valor) {
-        if (valor <= 100) {
-            throw new RuntimeException("Valor mínimo para pagamento com cartão de crédito é de R$100.");
-        }
-
+    @Override
+    public boolean processPayment(double amount) {
+        // Implemente a lógica de processamento do pagamento via Cartão de Crédito
+        // Verifique o limite, divida em parcelas, registre a transação, etc.
+        System.out.println("Pagamento via Cartão de Crédito processado com sucesso.");
+        return true;
     }
 }

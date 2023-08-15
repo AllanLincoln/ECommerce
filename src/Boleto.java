@@ -1,7 +1,24 @@
 public class Boleto implements PaymentMethod {
+    private String Boleto;
+
+    public Boleto(String boleto) {
+        this.Boleto = boleto;
+    }
+
+    public Boleto() {
+
+    }
+
+    @Override
     public void efetuarPagamento(double valor) {
-        System.out.println("Gerando boleto no valor de R$" + valor + ".");
-        // Lógica para gerar o boleto
-        System.out.println("Pagamento via boleto gerado com sucesso.");
+
+    }
+
+    @Override
+    public boolean processPayment(double amount) {
+        // Implemente a lógica de processamento do pagamento via Boleto
+        // Gere o boleto, registre a transação, etc.
+        System.out.println("Pagamento via Boleto processado com sucesso.");
+        return true;
     }
 }

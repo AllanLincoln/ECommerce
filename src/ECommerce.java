@@ -27,7 +27,7 @@ public class ECommerce {
         // Métodos de pagamento
         PaymentMethod pix = new Pix();
         PaymentMethod boleto = new Boleto();
-        PaymentMethod cartaoCredito = new CartaoCredito(10);
+        PaymentMethod cartaoCredito = new CartaoCredito();
 
         //Variedade de itens
         double totalAmount = cart.calculateTotal();
